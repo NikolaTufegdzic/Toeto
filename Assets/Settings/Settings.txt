@@ -1,0 +1,4 @@
+tutorialSkip = False
+credits = True
+musicVolumeSet = 10
+fxVolumeSet = 6
