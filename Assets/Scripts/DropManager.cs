@@ -20,7 +20,7 @@ public class DropManager : MonoBehaviour
 
     public void DropHandler(GameObject dropObject){
         Drop drop = dropObject.GetComponent<Drop>();
-        SoundController.Instance.PlaySoundDrop(dropObject.transform.position); 
+        SoundController.Instance.PlaySoundDrop(); 
         switch (drop.dropType)
         {
             case DropTypesEnumSO.DropType.ExtendPlayerPad:

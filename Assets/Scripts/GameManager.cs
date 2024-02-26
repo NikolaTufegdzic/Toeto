@@ -353,7 +353,7 @@ public class GameManager : MonoBehaviour
     public void AddXp(int amount){
         xp += amount;
         int ballSpeed = (int)(PlayerBall.Instance.GetBallSpeed());
-        if(ballSpeed>4){
+        if(ballSpeed>4&&GizmoManager.Instance.hasXpBonus){
             xp+=(ballSpeed-4)*50;
         }
         int lvlTreshold= LvLFormula(lvl);
@@ -372,7 +372,7 @@ public class GameManager : MonoBehaviour
         lvl++;
         lvlUpPoints++;
         GameSceneUI.Instance.LvlUpTooltipOn(); 
-        SoundController.Instance.PlaySoundLevelUp(new Vector3(0,0,-9.5f));  
+        SoundController.Instance.PlaySoundLevelUp(new Vector3(0,0,-7.5f));  
     }
     public void ChooseLvlUp(bool changePreLvlUpState){
         if(changePreLvlUpState){

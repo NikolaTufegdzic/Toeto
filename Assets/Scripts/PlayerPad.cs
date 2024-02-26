@@ -39,11 +39,7 @@ public class PlayerPad : MonoBehaviour
             gameObject.SetActive(false);
         }
         if(wallCollision){
-            if((transform.position.x<0) && (inputVector.x>0) ){
-                wallCollision = false;
-                
-            } 
-            if((transform.position.x>0) && (inputVector.x<0) ){
+            if(((transform.position.x<0) && (inputVector.x>0)) || ((transform.position.x>0) && (inputVector.x<0))){
                 wallCollision = false;
             } 
         }

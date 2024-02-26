@@ -21,7 +21,6 @@ public class Projectile : MonoBehaviour
              Destroy(gameObject);
         }
         bool bounce = false;
-        bool passThrough = false;
         if(collision.gameObject.layer==11 || collision.gameObject.layer==12){
             Destroy(gameObject);
         } else {

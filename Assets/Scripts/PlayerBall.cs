@@ -40,7 +40,7 @@ public class PlayerBall : MonoBehaviour
         GameInput.Instance.PointFirst -= GameInput_PointFirst; 
         GameInput.Instance.PointSecond -= GameInput_PointSecond;  
     }
-    private void Update()
+    private void FixedUpdate()
     {   if(ballPosition.x<-9||ballPosition.x>6||ballPosition.y<-5.5f||ballPosition.y>5.2){
             BallCaught?.Invoke(this,EventArgs.Empty);
         }

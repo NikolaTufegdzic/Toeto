@@ -34,8 +34,8 @@ public class SoundController : MonoBehaviour
     public void PlaySoundLevelUp (Vector3 position){
         PlaySound(levelUpSound, position);
     }
-     public void PlaySoundDrop (Vector3 position){
-        PlaySound(dropSound, position+ new Vector3(0, 0, -9));
+     public void PlaySoundDrop (){
+        PlaySound(dropSound, new Vector3(0, 0, -5));
     }
     public void PlaySoundClick (){
         PlaySound(clickSound, Camera.main.transform.position, 1f);

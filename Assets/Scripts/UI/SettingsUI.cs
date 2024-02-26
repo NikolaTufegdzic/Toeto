@@ -178,6 +178,15 @@ public class SettingsUI : MonoBehaviour
         GameInput.Instance.RebindBinding(binding,() => ActionDone(text,GameInput.Instance.GetBindingText(binding)));
     }
     private void ReadFile(){
+          if(!File.Exists(filePath)){
+               using (StreamWriter writer = File.CreateText(filePath))
+            {
+                writer.WriteLine("tutorialSkip = false");
+                writer.WriteLine("credits = true");
+                writer.WriteLine("musicVolumeSet = 10");
+                writer.WriteLine("fxVolumeSet = 10");
+            }
+          }
           if (File.Exists(filePath))
         {
             string[] lines = File.ReadAllLines(filePath);
@@ -218,6 +227,7 @@ public class SettingsUI : MonoBehaviour
         else
         {
             Debug.LogError("Config file not found: " + filePath);
+            
         }
     }
     private void UpdateButtons(){
